@@ -1,13 +1,7 @@
-<div>Table : {{Products | json}}</div>
+
 <div class="product-list">
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
+  <app-product-item
+  *ngFor="let product of Products"
+  [product] ="product" >
+  </app-product-item>
 </div>

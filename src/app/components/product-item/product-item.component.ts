@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Product } from './../../models/product';
+
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +11,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-item.component.css'
 })
 export class ProductItemComponent {
+  @Input() product: Product | undefined
 
+
+  ngOnInit(): void {
+ }
 }
+
+
+
+
+
+
