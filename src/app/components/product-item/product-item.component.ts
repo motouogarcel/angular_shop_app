@@ -1,6 +1,6 @@
 import { Product } from './../../models/product';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,9 +12,19 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductItemComponent {
   @Input() product: Product | undefined
-
+  
+  @Output() deleteProductItem: EventEmitter<Product> = new EventEmitter<Product>()
 
   ngOnInit(): void {
+ }
+
+ handleClickProduct(product: Product | undefined){
+  console.log(product);
+ }
+
+ deleteProduct(product: Product | undefined){
+  // console.log(product);
+  this.deleteProductItem.emit(product);
  }
 }
 

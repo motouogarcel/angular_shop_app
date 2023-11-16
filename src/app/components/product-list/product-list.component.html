@@ -1,7 +1,8 @@
-
 <div class="product-list">
-  <app-product-item
-  *ngFor="let product of Products"
-  [product] ="product" >
-  </app-product-item>
+    <app-product-item *ngFor="let product of Products" [product] ="product"
+        (deleteProductItem)="handleDeleteProduct($event)">
+    </app-product-item>
+    <div class="bar" *ngIf="!Products.length">
+        Desolé aucun rticle n'est diponible pour le moment.
+    </div>
 </div>

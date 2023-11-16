@@ -1,4 +1,5 @@
 
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductItemComponent } from "../product-item/product-item.component";
@@ -202,4 +203,9 @@ export class ProductListComponent {
 
   }
 
+  handleDeleteProduct(product:Product){
+    this.Products = this.Products.filter(p => p._id !== product._id)
+    console.log("handleDeleteProduct",product);
+
+  }
 }
