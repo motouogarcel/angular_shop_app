@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductItemComponent } from "../product-item/product-item.component";
 import { Product } from '../../models/product';
+import { ModalProductViewComponent } from "../modal-product-view/modal-product-view.component";
 
 
 @Component({
@@ -11,11 +12,17 @@ import { Product } from '../../models/product';
     standalone: true,
     templateUrl: './product-list.component.html',
     styleUrl: './product-list.component.css',
-    imports: [CommonModule, ProductItemComponent]
+    imports: [CommonModule, ProductItemComponent, ModalProductViewComponent]
 })
 export class ProductListComponent {
 
   Products: Product[] = []
+
+  isDisplayModal: Boolean = false
+
+  modalProduct:Product | undefined
+
+  productModal: Product|undefined;
 
   ngOnInit(): void {
     this.Products = [
@@ -204,8 +211,23 @@ export class ProductListComponent {
   }
 
   handleDeleteProduct(product:Product){
-    this.Products = this.Products.filter(p => p._id !== product._id)
-    console.log("handleDeleteProduct",product);
-
+    // this.Products = this.Products.filter(p => p._id !== product._id)
+    // console.log("handleDeleteProduct",product);
   }
+
+  handledisplayProductViewModal(product:Product){
+    if(product){
+      this.isDisplayModal = true;
+      this.modalProduct = product
+      // this.productModal = product
+    }
+  }
+
+  closeModalView(){
+    console.log("bjjbcjbvjv");
+
+    this.isDisplayModal = false;
+  }
+
+
 }

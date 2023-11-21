@@ -8,12 +8,14 @@ import { HeaderComponent } from "./components/header/header.component";
 import { ProductComponent } from "./components/product/product.component";
 import { ProductItemComponent } from "./components/product-item/product-item.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
+import { ModalProductViewComponent } from './components/modal-product-view/modal-product-view.component';
+
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    imports: [CommonModule, RouterOutlet, FooterComponent, ContainerComponent, HeaderComponent, ProductComponent, ProductItemComponent, ProductListComponent]
+    imports: [CommonModule, RouterOutlet, FooterComponent, ContainerComponent, HeaderComponent, ProductComponent, ProductItemComponent, ProductListComponent, ModalProductViewComponent]
 })
 export class AppComponent {
   title = 'new_angular_project';
